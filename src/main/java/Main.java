@@ -33,7 +33,7 @@ public class Main {
             ratesEUR = Utils.getRatesUSDRUB(payload, 978);
             ratesGBP = Utils.getRatesUSDRUB(payload, 826);
 
-            Document document = new Document(ratesUSD.getCategory(), payload.getLastUpdate().getMilliseconds());
+            Document document = new Document(ratesUSD.getCategory().toLowerCase(), payload.getLastUpdate().getMilliseconds());
 
             if ((ratesEUR.getBuy() != 0 & ratesEUR.getBuy() != lastRUBfromEUR)
                     || (ratesEUR.getSell() != 0 & ratesEUR.getSell() != lastRUBtoEUR)) {
